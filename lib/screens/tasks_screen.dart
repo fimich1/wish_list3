@@ -1,17 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wish_list3/widgets/tasks_list.dart';
+import 'add_task.dart';
 
 class TasksScreen extends StatelessWidget {
   //const TasksScreen({Key? key}) : super(key: key);
-
-  Widget buildButtomSheet(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Это боттом бланк'),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +13,24 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
-        onPressed: () {
-          showModalBottomSheet(context: context, builder: buildButtomSheet);
-        },
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder: (context) => SingleChildScrollView(
+                    child:Container(
+                      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: AddTask(),
+                    )
+                )
+            );
+          }
+          // ниже вариант для окна н весь экран
+        // onPressed: () {
+        //   showModalBottomSheet(context: context,
+        //       isScrollControlled: true,
+        //       builder: (context) => AddTask());
+        // },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
