@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class AddTask extends StatelessWidget {
   const AddTask({Key? key}) : super(key: key);
 
@@ -8,23 +9,25 @@ class AddTask extends StatelessWidget {
     return Container(
       color: Color(0xff757575),
       child: Container(
-        padding: EdgeInsets.all(30.0) ,
+        padding: EdgeInsets.all(30.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topRight:  Radius.circular(20.0),
+            topRight: Radius.circular(20.0),
             topLeft: Radius.circular(20.0),
-            ),
           ),
+        ),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text('Задание',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 30.0,
-              color: Colors.lightBlueAccent,
-            ),),
+            Text(
+              'Задание',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 30.0,
+                color: Colors.lightBlueAccent,
+              ),
+            ),
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
@@ -35,12 +38,13 @@ class AddTask extends StatelessWidget {
             //   //добавить задание в листь
             //   child: const Text('Add'),
             IconButton(
-              icon: const Icon(Icons.add_shopping_cart_rounded,
-              size: 50.0,
-              color: Colors.lightBlueAccent,),
+              icon: const Icon(
+                Icons.add_shopping_cart_rounded,
+                size: 50.0,
+                color: Colors.lightBlueAccent,
+              ),
               tooltip: 'добавить задание в лист',
               onPressed: null,
-
             ),
 
             // InkWell(
@@ -53,7 +57,6 @@ class AddTask extends StatelessWidget {
             //       ),
             //   ),
             // ),
-
           ],
         ),
       ),
