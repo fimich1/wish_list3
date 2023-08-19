@@ -16,9 +16,16 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // количетво дней на которые расчитываютс продукты
+    // 1 - сделать выбор на 1 странцие при запуске
+    // в листе продукты пока указаны на 5 дней
+
+    var dney = 1;
+    var massa = task_massa * dney;
     return ListTile(
       title: Text(
-        taskTitle+'  $task_massa '+task_Ed_ism,
+        taskTitle+' $massa '+task_Ed_ism,
         style: TextStyle(
           decoration: isChecked == true ? TextDecoration.lineThrough : null,
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wish_list3/widgets/tasks_list.dart';
 import 'add_task.dart';
 import 'package:wish_list3/model/task.dart';
+import 'package:wish_list3/list_of_products/baidi.dart';
 
 
 class TasksScreen extends StatefulWidget {
@@ -11,11 +12,14 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [
-    Task(name: 'Суп в пачках', ed_ism: 'пачки', massa: 4.0, isDone: false),
-    Task(name: 'Мясо тушёное', ed_ism: 'банки', massa: 2.0, isDone: false),
-    Task(name: 'Молоко сгущёное', ed_ism: 'банка', massa: 1.0, isDone: false)
-  ];
+  // List<Task> tasks = [
+  //   Task(name: 'Суп в пачках', ed_ism: 'пачки', massa: 4.0, isDone: false),
+  //   Task(name: 'Мясо тушёное', ed_ism: 'банки', massa: 2.0, isDone: false),
+  //   Task(name: 'Молоко сгущёное', ed_ism: 'банка', massa: 1.0, isDone: false)
+  // ];
+  // заменен на import
+  // 'package:wish_list3/list_of_products/baidi.dart';
+
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +71,10 @@ class _TasksScreenState extends State<TasksScreen> {
               ),
               Text(
                 'количество продуктов | вещей: ${tasks.length} шт',
+                style: TextStyle(fontSize: 15, color: Colors.white),
+              ),
+              Text(
+                'расчитано на сплав 5 дней на байдарках по материалам А.П. Фесенко, для пожеланий и изменений: @Efiriy, +79878693514',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               SizedBox(
