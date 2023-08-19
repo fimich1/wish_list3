@@ -12,9 +12,9 @@ class TasksScreen extends StatefulWidget {
 
 class _TasksScreenState extends State<TasksScreen> {
   List<Task> tasks = [
-    Task(name: 'Task name here', isDone: false),
-    Task(name: 'Task name here', isDone: false),
-    Task(name: 'Task name here', isDone: false)
+    Task(name: 'Суп в пачках', ed_ism: 'пачки', massa: 4.0, isDone: false),
+    Task(name: 'Мясо тушёное', ed_ism: 'банки', massa: 2.0, isDone: false),
+    Task(name: 'Молоко сгущёное', ed_ism: 'банка', massa: 1.0, isDone: false)
   ];
 
   @override
@@ -30,7 +30,11 @@ class _TasksScreenState extends State<TasksScreen> {
               builder: (context) => AddTaskScreen(
                 addNewTask: (newTaskTitle) {
                   setState(() {
-                    tasks.add(Task(name: newTaskTitle));
+                    tasks.add(Task(
+                        name: newTaskTitle,
+                      ed_ism: ' ',
+                      massa: 1.0,
+                    ));
                   });
                   Navigator.pop(context);
                 },
@@ -55,14 +59,14 @@ class _TasksScreenState extends State<TasksScreen> {
                 height: 15,
               ),
               Text(
-                'Todoey',
+                'Упаковано',
                 style: TextStyle(
                     fontSize: 50,
                     color: Colors.white,
                     fontWeight: FontWeight.w700),
               ),
               Text(
-                '${tasks.length} tasks',
+                'количество продуктов | вещей: ${tasks.length} шт',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               SizedBox(

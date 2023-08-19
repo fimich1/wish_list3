@@ -17,7 +17,9 @@ class _TaskListState extends State<TaskList> {
     return ListView.builder(
       itemBuilder: (context, index) {
         return TaskTile(
-          taskTitle: widget.tasks[index].name,
+          taskTitle: (widget.tasks[index].name),
+          task_Ed_ism: (widget.tasks[index].ed_ism),
+          task_massa: (widget.tasks[index].massa),
           isChecked: widget.tasks[index].isDone,
           checkboxCallback: (checkboxState) {
             setState(() {

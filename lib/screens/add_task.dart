@@ -29,7 +29,7 @@ class AddTaskScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 15),
                 child: Text(
-                  'Add Task',
+                  'Добавить вещь | продукт',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 30,
@@ -51,7 +51,7 @@ class AddTaskScreen extends StatelessWidget {
                 height: 50,
                 color: Colors.lightBlueAccent,
                 child: Text(
-                  'Add',
+                  'Добавить',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 onPressed: () {
