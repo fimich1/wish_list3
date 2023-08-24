@@ -5,60 +5,113 @@ import 'add_task.dart';
 import 'package:wish_list3/model/task.dart';
 import 'package:wish_list3/list_of_products/baidi.dart';
 
-
 class TasksScreen extends StatefulWidget {
+
+  final double dney;
+  const TasksScreen ({required this.dney });
+
   @override
   _TasksScreenState createState() => _TasksScreenState();
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  // List<Task> tasks = [
-  //   Task(name: 'Суп в пачках', ed_ism: 'пачки', massa: 4.0, isDone: false),
-  //   Task(name: 'Мясо тушёное', ed_ism: 'банки', massa: 2.0, isDone: false),
-  //   Task(name: 'Молоко сгущёное', ed_ism: 'банка', massa: 1.0, isDone: false)
-  // ];
-  // заменен на import
-  // 'package:wish_list3/list_of_products/baidi.dart';
-
 
   @override
+
+
   Widget build(BuildContext context) {
+    double dey = widget.dney;
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.lightBlueAccent,
-          child: Icon(Icons.add),
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (context) => AddTaskScreen(
-                addNewTask: (newTaskTitle) {
-                  setState(() {
-                    tasks.add(Task(
+      appBar: AppBar(
+        title: const Text('Упаковано:'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_shopping_cart_rounded),
+            tooltip: 'Добавить продукт / вещь',
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => AddTaskScreen(
+                  addNewTask: (newTaskTitle) {
+                    setState(() {
+                      tasks.add(Task(
                         name: newTaskTitle,
-                      ed_ism: ' ',
-                      massa: 1.0,
-                    ));
-                  });
-                  Navigator.pop(context);
+                        ed_ism: ' ',
+                        massa: 1.0,
+                      ));
+                    });
+                    Navigator.pop(context);
+                  },
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.add_call),
+            tooltip: 'Информация',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a snackbar')));
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.navigate_next),
+            tooltip: 'Go to the next page',
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute<void>(
+                builder: (BuildContext context) {
+                  return Scaffold(
+                    appBar: AppBar(
+                      title: const Text('Next page'),
+                    ),
+                    body: const Center(
+                      child: Text(
+                        'This is the next page',
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                  );
                 },
-              ),
-            );
-          }),
+              ));
+            },
+          ),
+        ],
+      ),
+      backgroundColor: Colors.lightBlueAccent,
+      // floatingActionButton: FloatingActionButton(
+      //     backgroundColor: Colors.lightBlueAccent,
+      //     child: Icon(Icons.add),
+      //     onPressed: () {
+      //       showModalBottomSheet(
+      //         context: context,
+      //         builder: (context) => AddTaskScreen(
+      //           addNewTask: (newTaskTitle) {
+      //             setState(() {
+      //               tasks.add(Task(
+      //                 name: newTaskTitle,
+      //                 ed_ism: ' ',
+      //                 massa: 1.0,
+      //               ));
+      //             });
+      //             Navigator.pop(context);
+      //           },
+      //         ),
+      //       );
+      //     }),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
-          padding: EdgeInsets.only(top: 60, left: 30),
+          padding: EdgeInsets.only(top: 30, left: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.white,
-                child: Icon(
-                  Icons.list,
-                  size: 35,
-                ),
-              ),
+              // CircleAvatar(
+              //   radius: 30,
+              //   backgroundColor: Colors.white,
+              //   child: Icon(
+              //     Icons.list,
+              //     size: 35,
+              //   ),
+              // ),
               SizedBox(
                 height: 15,
               ),
@@ -74,7 +127,17 @@ class _TasksScreenState extends State<TasksScreen> {
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               Text(
-                'расчитано на сплав 5 дней на байдарках по материалам А.П. Фесенко, для пожеланий и изменений: @Efiriy, +79878693514',
+                'расчитано на количество дней: $dey на байдарках',
+
+                style: TextStyle(fontSize: 15, color: Colors.white),
+              ),
+              Text(
+
+                    'по материалам А.П. Фесенко',
+                style: TextStyle(fontSize: 15, color: Colors.white),
+              ),
+              Text(
+                'для пожеланий и изменений: @Efiriy, +79878693514',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
               SizedBox(
@@ -94,7 +157,10 @@ class _TasksScreenState extends State<TasksScreen> {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: TaskList(tasks: tasks),
+              child: TaskList(
+                  tasks: tasks,
+                dney: dey,
+              ),
             ),
           ),
         ),

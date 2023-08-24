@@ -41,7 +41,7 @@ class AddTaskScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 autofocus: true,
                 onChanged: (newValue) {
-                  newTaskTitle = newValue;
+                  newTaskTitle = '  '+newValue+'  ';
                 },
               ),
               SizedBox(
