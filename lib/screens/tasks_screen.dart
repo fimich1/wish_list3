@@ -29,7 +29,22 @@ class _TasksScreenState extends State<TasksScreen> {
             icon: const Icon(Icons.add_shopping_cart_rounded),
             tooltip: 'Добавить продукт / вещь',
             onPressed: () {
+
+              // onPressed: () {
+              //   showModalBottomSheet(
+              //       context: context,
+              //       isScrollControlled: true,
+              //       builder: (context) => SingleChildScrollView(
+              //           child:Container(
+              //             padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+              //             child: AddTaskScreen(),
+              //           )
+              //       )
+              //   );
+              // } это чтобы на весь экран развернуть
+
               showModalBottomSheet(
+                isScrollControlled: true,
                 context: context,
                 builder: (context) => AddTaskScreen(
                   addNewTask: (newTaskTitle) {

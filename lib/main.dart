@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/tasks_screen.dart';
 import 'screens/pass_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
