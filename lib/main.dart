@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/tasks_screen.dart';
+import 'package:wish_list3/screens/tasks_screen.dart';
 import 'screens/pass_screen.dart';
 
 void main() => runApp(const MyApp());
