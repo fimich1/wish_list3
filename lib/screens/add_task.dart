@@ -1,9 +1,7 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  AddTaskScreen({required this.addNewTask});
+  const AddTaskScreen({super.key, required this.addNewTask});
 
   final Function addNewTask;
 
@@ -12,9 +10,9 @@ class AddTaskScreen extends StatelessWidget {
     String? newTaskTitle;
 
     return Container(
-      color: Color(0xff757575),
+      color: const Color(0xff757575),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(20),
@@ -22,11 +20,11 @@ class AddTaskScreen extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 15),
                 child: Text(
                   'Добавить вещь | продукт',
@@ -41,16 +39,16 @@ class AddTaskScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 autofocus: true,
                 onChanged: (newValue) {
-                  newTaskTitle = '  '+newValue+'  ';
+                  newTaskTitle = '  $newValue  ';
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               MaterialButton(
                 height: 50,
                 color: Colors.lightBlueAccent,
-                child: Text(
+                child: const Text(
                   'Добавить',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),

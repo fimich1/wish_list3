@@ -8,7 +8,7 @@ class TaskTile extends StatelessWidget {
   final double task_massa;
   final Function(bool?)? checkboxCallback;
 
-  TaskTile({
+  const TaskTile({super.key, 
     this.isChecked,
     required this.dney,
     required this.taskTitle,

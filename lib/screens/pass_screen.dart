@@ -5,6 +5,8 @@ import 'package:wish_list3/list_of_products/baidi.dart';
 
 
 class PassWordPage extends StatefulWidget {
+  const PassWordPage({super.key});
+
   @override
   _PassWordPageState createState() => _PassWordPageState();
 }
@@ -19,7 +21,7 @@ class _PassWordPageState extends State<PassWordPage> {
   //  return const Image(image: AssetImage('images/2023.jpeg'));
     return Scaffold(
       appBar: AppBar(
-        title: Text('Введите количество дней сплава / похода'),
+        title: const Text('Введите количество дней сплава / похода'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_alert),
@@ -55,45 +57,45 @@ class _PassWordPageState extends State<PassWordPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Hero(
+          const Hero(
             tag: 'logo',
-            child: Container(
+            child: SizedBox(
               height: 200.0,
              child: Image(image: AssetImage('images/2023.jpeg')),
               // child: Image.asset('images/2023.jpg'),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 48.0,
           ),
           SizedBox(
             height: 48.0,
             child: Text(
               'Дней сплава / похода: $selectedCurrency',
-              style: TextStyle(fontSize: 27, color: Colors.blueGrey),
+              style: const TextStyle(fontSize: 27, color: Colors.blueGrey),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: TextField(
               controller: textEditingController,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 30,
               ),
               decoration: InputDecoration(
                 // icon: new Icon(Icons.message),
-                labelText: '$selectedCurrency',
+                labelText: selectedCurrency,
                 enabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.grey,
                   ),
                 ),
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   borderSide: BorderSide(color: Colors.black54),
                 ),
@@ -108,7 +110,7 @@ class _PassWordPageState extends State<PassWordPage> {
             //
             // color: Colors.black54,
             //
-            child: Text(
+            child: const Text(
               'Открыть список',
               style: TextStyle(fontSize: 27, color: Colors.deepPurple),
             ),
@@ -125,13 +127,13 @@ class _PassWordPageState extends State<PassWordPage> {
               );
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 48.0,
           ),
           Container(
             height: 150.0,
             alignment: Alignment.center,
-            padding: EdgeInsets.only(bottom: 30.0),
+            padding: const EdgeInsets.only(bottom: 30.0),
             color: Colors.lightBlue,
             //child: Platform.isIOS ? iOSPicker() : androidDropdown(),
             child: iOSPicker(),

@@ -3,7 +3,7 @@ import 'tasks_tile.dart';
 import 'package:wish_list3/model/task.dart';
 
 class TaskList extends StatefulWidget {
-  TaskList({
+  const TaskList({super.key, 
     required this.tasks,
     required this.dney,
 

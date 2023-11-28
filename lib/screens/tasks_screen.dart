@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wish_list3/widgets/tasks_list.dart';
 import 'add_task.dart';
@@ -8,7 +7,7 @@ import 'package:wish_list3/list_of_products/baidi.dart';
 class TasksScreen extends StatefulWidget {
 
   final double dney;
-  const TasksScreen ({required this.dney });
+  const TasksScreen ({super.key, required this.dney });
 
   @override
   _TasksScreenState createState() => _TasksScreenState();
@@ -115,7 +114,7 @@ class _TasksScreenState extends State<TasksScreen> {
       //     }),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
-          padding: EdgeInsets.only(top: 30, left: 30),
+          padding: const EdgeInsets.only(top: 30, left: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -127,10 +126,10 @@ class _TasksScreenState extends State<TasksScreen> {
               //     size: 35,
               //   ),
               // ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text(
+              const Text(
                 'Упаковано',
                 style: TextStyle(
                     fontSize: 50,
@@ -139,23 +138,23 @@ class _TasksScreenState extends State<TasksScreen> {
               ),
               Text(
                 'количество продуктов | вещей: ${tasks.length} шт',
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: const TextStyle(fontSize: 15, color: Colors.white),
               ),
               Text(
                 'расчитано на количество дней: $dey на байдарках',
 
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: const TextStyle(fontSize: 15, color: Colors.white),
               ),
-              Text(
+              const Text(
 
                     'по материалам А.П. Фесенко',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
-              Text(
+              const Text(
                 'для пожеланий и изменений: @Efiriy, +79878693514',
                 style: TextStyle(fontSize: 15, color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
             ],
@@ -163,7 +162,7 @@ class _TasksScreenState extends State<TasksScreen> {
         ),
         Expanded(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
@@ -171,7 +170,7 @@ class _TasksScreenState extends State<TasksScreen> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TaskList(
                   tasks: tasks,
                 dney: dey,

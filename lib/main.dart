@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'screens/tasks_screen.dart';
 import 'screens/pass_screen.dart';
-import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   // const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
         initialRoute: '/pass',
         routes: {
           // '/hello': (context) => HellouaScreen(),
-          '/list': (context) => TasksScreen(dney: 3.0),
-          '/pass': (context) => PassWordPage(),
+          '/list': (context) => const TasksScreen(dney: 3.0),
+          '/pass': (context) => const PassWordPage(),
         });
   }
 }
