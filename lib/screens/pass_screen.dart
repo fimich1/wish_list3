@@ -28,24 +28,35 @@ class _PassWordPageState extends State<PassWordPage> {
             tooltip: 'Show Snackbar',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('This is a snackbar')));
+                  const SnackBar(content: Text('Выбери количество дней и нажми "Открыть список"')));
             },
           ),
           IconButton(
             icon: const Icon(Icons.navigate_next),
-            tooltip: 'Go to the next page',
+            tooltip: 'Следующая страница',
             onPressed: () {
               Navigator.push(context, MaterialPageRoute<void>(
                 builder: (BuildContext context) {
                   return Scaffold(
                     appBar: AppBar(
-                      title: const Text('Next page'),
+                      title: const Text('Связь'),
                     ),
-                    body: const Center(
-                      child: Text(
-                        'This is the next page',
-                        style: TextStyle(fontSize: 24),
-                      ),
+                    body:
+                    const Center(
+                      child:
+                       const Text(
+
+                             'по материалам А.П. Фесенко',
+                         style: TextStyle(fontSize: 15, color: Colors.white),
+                       ),
+                       //
+
+
+
+                      // Text(
+                      //   'This is the next page',
+                      //   style: TextStyle(fontSize: 24),
+                      // ),
                     ),
                   );
                 },
@@ -60,7 +71,7 @@ class _PassWordPageState extends State<PassWordPage> {
           const Hero(
             tag: 'logo',
             child: SizedBox(
-              height: 200.0,
+              height: 150.0,
              child: Image(image: AssetImage('images/2023.jpeg')),
               // child: Image.asset('images/2023.jpg'),
             ),

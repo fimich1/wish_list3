@@ -65,23 +65,30 @@ class _TasksScreenState extends State<TasksScreen> {
             tooltip: 'Информация',
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('This is a snackbar')));
+                  const SnackBar(content: Text('Отметь только когда положишь в рюкзак')));
             },
           ),
           IconButton(
             icon: const Icon(Icons.navigate_next),
-            tooltip: 'Go to the next page',
+            tooltip: 'Следующая страница',
             onPressed: () {
               Navigator.push(context, MaterialPageRoute<void>(
                 builder: (BuildContext context) {
                   return Scaffold(
                     appBar: AppBar(
-                      title: const Text('Next page'),
+                      title: const Text('Связь'),
                     ),
                     body: const Center(
                       child: Text(
-                        'This is the next page',
-                        style: TextStyle(fontSize: 24),
+
+
+                     'для пожеланий и изменений: @Efiriy, +79878693514',
+                    style: TextStyle(fontSize: 15, color: Colors.white),
+
+
+
+
+
                       ),
                     ),
                   );
@@ -145,15 +152,15 @@ class _TasksScreenState extends State<TasksScreen> {
 
                 style: const TextStyle(fontSize: 15, color: Colors.white),
               ),
-              const Text(
-
-                    'по материалам А.П. Фесенко',
-                style: TextStyle(fontSize: 15, color: Colors.white),
-              ),
-              const Text(
-                'для пожеланий и изменений: @Efiriy, +79878693514',
-                style: TextStyle(fontSize: 15, color: Colors.white),
-              ),
+              // const Text(
+              //
+              //       'по материалам А.П. Фесенко',
+              //   style: TextStyle(fontSize: 15, color: Colors.white),
+              // ),
+              // const Text(
+              //   'для пожеланий и изменений: @Efiriy, +79878693514',
+              //   style: TextStyle(fontSize: 15, color: Colors.white),
+              // ),
               const SizedBox(
                 height: 50,
               ),
